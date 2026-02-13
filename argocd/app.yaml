@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nextjs-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rizkyprawira/platform-repo
+    targetRevision: main
+    path: helm-charts/nextjs-app
+    helm:
+      values: |
+        image:
+          repository: rizkyprawira/myweb
+          tag: latest
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

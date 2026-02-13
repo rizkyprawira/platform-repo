@@ -1,0 +1,9 @@
+replicaCount: 3
+
+image:
+  tag: "1.0.0"
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
