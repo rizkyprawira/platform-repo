@@ -10,10 +10,8 @@ spec:
     targetRevision: main
     path: helm-charts/nextjs-app
     helm:
-      values: |
-        image:
-          repository: rizkyprawira/myweb
-          tag: latest
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default
