@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: rizkyprawira/myweb
-  tag: latest
+  tag: 1.0.1
   pullPolicy: IfNotPresent
 
 service:
